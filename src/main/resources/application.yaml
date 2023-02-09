@@ -1,27 +1,6 @@
 server:
   port: 8094
 
-#spring:
-#  datasource:
-#    mysql:
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-#      jdbc-url: jdbc:mysql://127.0.0.1:3307/test?serverTimezone=Asia/Shanghai
-#      username: root
-#      password: 123456
-#    postgresql:
-#      driver-class-name: org.postgresql.Driver
-#      jdbc-url: jdbc:postgresql://127.0.0.1:5432/test
-#      username: postgres
-#      password: root
-#
-#  # jpa 下面的两个配置都不能少，否则项目启动报错
-#  jpa:
-#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-#    properties:
-#      hibernate:
-#        temp:
-#          use_jdbc_metadata_defaults: false
-
 spring:
   datasource:
     mysql:

@@ -25,4 +25,13 @@ public class PostgresqlController {
         return postgresqlUserRepository.findById(id).orElseThrow(() ->  new RuntimeException("No record found by id=" + id));
     }
 
+    @GetMapping("/insert/performance/{insertNum}")
+    public String insertPerformance(@PathVariable Integer insertNum) {
+        long start = System.currentTimeMillis();
+        for (int i = 1; i <= insertNum; i++) {
+            postgresqlUserRepository.insert(i);
+        }
+        return "PostgreSQL 插入性能：insert " + insertNum + "条，耗时：" + (System.currentTimeMillis() - start) + " ms";
+    }
+
 }

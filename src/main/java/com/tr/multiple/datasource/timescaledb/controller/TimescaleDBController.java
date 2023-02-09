@@ -25,4 +25,13 @@ public class TimescaleDBController {
         return timescaleDBUserRepository.findById(id).orElseThrow(() ->  new RuntimeException("No record found by id=" + id));
     }
 
+    @GetMapping("/insert/performance/{insertNum}")
+    public String insertPerformance(@PathVariable Integer insertNum) {
+        long start = System.currentTimeMillis();
+        for (int i = 1; i <= insertNum; i++) {
+            timescaleDBUserRepository.insert(i);
+        }
+        return "TimescaleDB 插入性能：insert " + insertNum + "条，耗时：" + (System.currentTimeMillis() - start) + " ms";
+    }
+
 }
